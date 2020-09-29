@@ -1,32 +1,33 @@
-import sun.tools.jstat.SymbolResolutionClosure;
+import java.util.Scanner;
 
-public class hw3week2cf {public static void main(String[] args)
-    
-    { 
-    //1-100까지의 숫자 중에서 8의 배수는 총 몇 개가 있는 지 개수를 구하시오 
-    int n=0;
-    int m=0;
-    int cnt=0;
-    int cmt=0; 
-    
-    while(true) 
-    {
-     n++; //8의 배수이면 cnt변수 1증가 
-        if(n%8==0) 
-            cnt++; //true문이기 때문에 break필수 
-            if(n==100) 
-                break; 
-    }
-    while(true)
-    {
-        m++;
-            if(m%9==0)
-             cmt++;
-                if(m==100)
+public class hw3week2cf {
+    public static void main(final String[] args) {
+        final Scanner sc = new Scanner(System.in);
+        while (true) {
+            final int num = sc.nextInt();
+            if (num == 0)
                 break;
+            // 1. 숫자를 문자로 변환한다
+            final String str = Integer.toString(num);
+
+            // 2. 변환한 숫자를 뒤집는 작업한다(+=,for사용)
+
+            String str2 = "";
+            for (int i = str.length() - 1; i >= 0; i--) // 뒤에서부터 하나씩 줄여라
+            {
+                str2 += str.charAt(i); // str를 뒤에서부터 하나씩 붙여라(복습!!)
+            }
+            if (str.compareTo(str2) == 0) { // 3. 두 숫자를 비교한다(compareTo사용) + 4. 두 숫자가 맞다면
+                System.out.println("회문문입니다"); // 5. 프린트아웃("회문문입니다")
+            } else {
+                System.out.println("회문문이 아닙니다");
+            }
+        }
     }
-    System.out.println("8의 배수 갯수: " + cnt + "개"); 
-    System.out.println("9의 배수 갯수: " + cmt + "개");
-    }
+
+    // +=
+    // for
+    // compareTo를 이용해서 정수를
+    // Tostring
 
 }
