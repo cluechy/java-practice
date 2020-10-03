@@ -11,15 +11,18 @@ public class hw4week1 {
                 
                 int i; // 변수설정
                 for(i=2; i<num; ++i){
-                if (num%i == 0){
-                    System.out.println("소수가 아닙니다");
-                    break;}
-                }
-                if(num==i)
-                System.out.println("소수입니다!");
-                continue;
-            }
-            }
-        }
-    }
+                    if (num%i == 0){
+                        System.out.println("소수가 아닙니다");
+                        break;}
+                       }
+                       if(num==i)
+                       System.out.println("소수입니다!");
+                       continue;
+                                       }
+                
+                                       }
+                                       
+                                   }
+                               }
+            
     
